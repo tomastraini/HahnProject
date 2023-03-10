@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "fa7TCqswaF0dPZaX7/4KWWn1R05OJH31lmu1rZ8gvlh/KuwUePZTUBf42FlE2h4GJBwmwhJz2BXOseG0y3WU0g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TomasPC\\source\\repos\\HahnProject\\HahnProject\\HahnProject.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.aspnetcore.authentication.negotiate\\6.0.13\\microsoft.aspnetcore.authentication.negotiate.6.0.13.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\6.0.13\\microsoft.aspnetcore.connections.abstractions.6.0.13.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.extensions.features\\6.0.13\\microsoft.extensions.features.6.0.13.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.2\\microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\system.directoryservices.protocols\\6.0.1\\system.directoryservices.protocols.6.0.1.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
