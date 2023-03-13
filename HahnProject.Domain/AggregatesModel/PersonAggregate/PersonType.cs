@@ -10,6 +10,7 @@ namespace HahnProject.Domain.AggregatesModel.PersonAggregate
 {
     public class PersonType : EntityBase, IAggregateRoot, BaseRepositoryMethods<PersonType>
     {
+
         public long ID { get; set; }
         public string type { get; set; }
 

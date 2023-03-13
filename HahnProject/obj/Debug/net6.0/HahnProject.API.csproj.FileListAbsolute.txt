@@ -97,3 +97,11 @@ D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Domain.pdb
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Infrastructure.pdb
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\obj\Debug\net6.0\HahnProject.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll

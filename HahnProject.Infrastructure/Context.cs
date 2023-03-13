@@ -2,26 +2,27 @@
 using HahnProject.Infrastructure.PlainModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HahnProject.Infrastructure
 {
     public partial class Context : DbContext
     {
-        public Context()
-        {
-
-        }
 
         public Context(DbContextOptions<Context> options) : base(options)
         {
-            
         }
+
+        public IConfigurationRoot Configuration { get; }
+        public Context()
+        {
+            var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
+        }
+
         public DbSet<Person> person { get; set; }
         public DbSet<PersonType> persontype { get; set; }
 
@@ -45,7 +46,7 @@ namespace HahnProject.Infrastructure
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             // connect to sql server with connection string from app settings
-            options.UseSqlServer("Data Source=host.docker.internal;Initial Catalog=HahnWarehouse;User ID=sa;Password=123;TrustServerCertificate=true");
+            options.UseSqlServer(Configuration.GetConnectionString("local"));
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

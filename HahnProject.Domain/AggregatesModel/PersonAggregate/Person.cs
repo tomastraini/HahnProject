@@ -14,7 +14,6 @@ namespace HahnProject.Domain.AggregatesModel.ClientAggregate
 {
     public class Person : EntityBase, IAggregateRoot, BaseRepositoryMethods<Person>
     {
-        public readonly Context ctx = new Context();
 
         public long ID { get; set; }
         public string business_name { get; set; }
