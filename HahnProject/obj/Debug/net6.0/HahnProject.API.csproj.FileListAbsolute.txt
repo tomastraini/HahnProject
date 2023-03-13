@@ -96,3 +96,4 @@ D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Infrastructure.dll
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Domain.pdb
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Infrastructure.pdb
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\obj\Debug\net6.0\HahnProject.API.MvcApplicationPartsAssemblyInfo.cs
