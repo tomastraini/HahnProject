@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "T+cSolu/n5ir5XtFBPHrvpT2MMvZ00e17qzMIAYgQpo=",
-  "Source": "HahnProject",
-  "BasePath": "_content/HahnProject",
+  "Hash": "+IfwwemMOQHp2XnvNG6D6IUHgH1gQVs8VJ6WOOQ4UcI=",
+  "Source": "HahnProject.API",
+  "BasePath": "_content/HahnProject.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

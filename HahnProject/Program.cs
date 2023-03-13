@@ -1,4 +1,13 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using HahnProject.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Net.Http.Headers;
+using System.Net;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.AspNetCore.Connections.Features;
+using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Server.HttpSys;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,16 +18,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-   .AddNegotiate();
 
-builder.Services.AddAuthorization(options =>
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    // By default, all incoming requests will be authorized according to the default policy.
-    options.FallbackPolicy = options.DefaultPolicy;
+    serverOptions.ConfigureHttpsDefaults(listenOptions =>
+    {
+    });
 });
 
+
+builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
+   .AddNegotiate(options  =>
+   {
+       options.PersistKerberosCredentials = true;
+       if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+       {
+       }
+
+   });
+
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -29,8 +52,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors(options =>
+{
+    options.AllowAnyMethod();
+    options.AllowAnyHeader();
+    options.AllowAnyOrigin();
+});
+
 app.UseAuthentication();
-app.UseAuthorization();
 
 app.MapControllers();
 

@@ -1,0 +1,17 @@
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.csproj.AssemblyReference.cache
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.AssemblyInfoInputs.cache
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.AssemblyInfo.cs
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.csproj.CoreCompileInputs.cache
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\bin\Debug\net6.0\HahnProject.Domain.deps.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\bin\Debug\net6.0\HahnProject.Domain.runtimeconfig.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\bin\Debug\net6.0\HahnProject.Domain.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\bin\Debug\net6.0\HahnProject.Domain.pdb
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\bin\Debug\net6.0\HahnProject.Infrastructure.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\bin\Debug\net6.0\HahnProject.Infrastructure.pdb
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.csproj.CopyComplete
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\refint\HahnProject.Domain.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.pdb
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\HahnProject.Domain.genruntimeconfig.cache
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Domain\obj\Debug\net6.0\ref\HahnProject.Domain.dll
