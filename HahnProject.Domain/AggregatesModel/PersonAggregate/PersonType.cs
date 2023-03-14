@@ -17,28 +17,68 @@ namespace HahnProject.Domain.AggregatesModel.PersonAggregate
 
         public List<PersonType> FindAll()
         {
-            throw new NotImplementedException();
+            var response = (from p in ctx.persontype
+                     select new PersonType()
+                     {
+                         ID = p.id,
+                         type = p.type,
+                            
+                     }).ToList();
+            if (response == null)
+                return new List<PersonType>();
+
+            return response;
         }
 
         public PersonType FindById(long id)
         {
-            throw new NotImplementedException();
+            var x = (from p in ctx.persontype
+                     where p.id.Equals((int)id)
+                     select new PersonType()
+                     {
+                         ID = p.id,
+                         type = p.type,
+                     }).FirstOrDefault();
+            if (x == null)
+                return new PersonType();
+            var response = new PersonType()
+            {
+                ID = x.ID,
+                type = x.type
+            };
+
+            return response;
         }
 
         public void Insert(PersonType item)
         {
-            throw new NotImplementedException();
+            ctx.persontype.Add(new Infrastructure.PlainModels.PersonType()
+            {
+                type = item.type
+            });
+
+            ctx.SaveChanges();
         }
 
         public void Update(PersonType item)
         {
-            throw new NotImplementedException();
+            var result = ctx.persontype.FirstOrDefault(x => x.id == item.ID);
+            if (result == null)
+                return;
+            result.type = item.type;
+
+            ctx.SaveChanges();
         }
 
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            var result = ctx.persontype.FirstOrDefault(x => x.id == id);
+            if (result == null)
+                return;
+            ctx.persontype.Remove(result);
+
+            ctx.SaveChanges();
         }
     }
 }

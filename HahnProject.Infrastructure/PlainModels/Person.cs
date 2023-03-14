@@ -16,5 +16,6 @@ namespace HahnProject.Infrastructure.PlainModels
         public int person_type { get; set; }
 
         public PersonType PersonType { get; set; }
+        public List<Products> products { get; set; }
     }
 }

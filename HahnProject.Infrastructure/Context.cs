@@ -25,6 +25,9 @@ namespace HahnProject.Infrastructure
 
         public DbSet<Person> person { get; set; }
         public DbSet<PersonType> persontype { get; set; }
+        public DbSet<Products> products { get; set; }
+        public DbSet<Transactions> ransactions { get; set; }
+        public DbSet<SubTransactions> subtransactions { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,12 +35,24 @@ namespace HahnProject.Infrastructure
             
             modelBuilder.ApplyConfiguration(new PersonConfiguration());
             modelBuilder.ApplyConfiguration(new PersonTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductsConfiguration());
+            modelBuilder.ApplyConfiguration(new TransactionsConfiguration());
+            modelBuilder.ApplyConfiguration(new SubTransactionsConfiguration());
 
             modelBuilder.Entity<Person>()
                 .HasOne(x => x.PersonType)
                 .WithMany(x => x.people)
                 .HasForeignKey(p => p.person_type);
 
+            modelBuilder.Entity<Products>()
+                .HasOne(x => x.supplier)
+                .WithMany(x => x.products)
+                .HasForeignKey(x => x.supplier_id);
+
+            modelBuilder.Entity<SubTransactions>()
+                .HasOne(x => x.Transactions)
+                .WithMany(x => x.SubTransactions)
+                .HasForeignKey(x => x.transaction_id);
 
             OnModelCreatingPartial(modelBuilder);
 
