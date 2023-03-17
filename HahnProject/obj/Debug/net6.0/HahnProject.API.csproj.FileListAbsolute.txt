@@ -105,3 +105,9 @@ D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Json.dll
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\App\App\angular.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\App\App\package-lock.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\App\App\package.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\App\App\tsconfig.app.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\App\App\tsconfig.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\App\App\tsconfig.spec.json

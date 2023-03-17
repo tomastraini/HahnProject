@@ -12,19 +12,19 @@ namespace HahnProject.API.Controllers
     {
         public Person person = new Person();
         [HttpGet]
-        public ActionResult GetClients()
+        public ActionResult GetPerson()
         {
             return Ok(person.FindAll());
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetClient(long id)
+        public ActionResult GetPeople(long id)
         {
             return Ok(person.FindById(id));
         }
 
         [HttpPost]
-        public ActionResult InsertClient(PersonR p)
+        public ActionResult InsertPerson(PersonR p)
         {
             person.Insert(new Person()
             { 
@@ -39,7 +39,7 @@ namespace HahnProject.API.Controllers
         }
 
         [HttpPut]
-        public ActionResult ModifyClient(PersonR p)
+        public ActionResult ModifyPerson(PersonR p)
         {
             person.Update(new Person()
             {
@@ -55,7 +55,7 @@ namespace HahnProject.API.Controllers
         }
 
         [HttpDelete]
-        public ActionResult ModifyClient(long id)
+        public ActionResult ModifyPerson(long id)
         {
             person.Delete(id);
             return Ok();

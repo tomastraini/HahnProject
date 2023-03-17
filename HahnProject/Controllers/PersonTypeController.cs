@@ -1,5 +1,4 @@
 ﻿using HahnProject.API.RequestEntities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HahnProject.Domain.AggregatesModel.PersonAggregate;
 
@@ -11,19 +10,19 @@ namespace HahnProject.API.Controllers
     {
         public PersonType persontype = new PersonType();
         [HttpGet]
-        public ActionResult GetClients()
+        public ActionResult GetPersontypes()
         {
             return Ok(persontype.FindAll());
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetClient(long id)
+        public ActionResult GetPersontype(long id)
         {
             return Ok(persontype.FindById(id));
         }
 
         [HttpPost]
-        public ActionResult InsertClient(PersonTypeR p)
+        public ActionResult InsertPersontype(PersonTypeR p)
         {
             persontype.Insert(new Domain.AggregatesModel.PersonAggregate.PersonType()
             {
@@ -33,7 +32,7 @@ namespace HahnProject.API.Controllers
         }
 
         [HttpPut]
-        public ActionResult ModifyClient(PersonTypeR p)
+        public ActionResult ModifyPersontype(PersonTypeR p)
         {
             persontype.Update(new PersonType()
             {
@@ -44,7 +43,7 @@ namespace HahnProject.API.Controllers
         }
 
         [HttpDelete]
-        public ActionResult ModifyClient(long id)
+        public ActionResult DeletePersontype(long id)
         {
             persontype.Delete(id);
             return Ok();

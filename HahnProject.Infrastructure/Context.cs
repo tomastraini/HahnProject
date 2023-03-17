@@ -26,7 +26,7 @@ namespace HahnProject.Infrastructure
         public DbSet<Person> person { get; set; }
         public DbSet<PersonType> persontype { get; set; }
         public DbSet<Products> products { get; set; }
-        public DbSet<Transactions> ransactions { get; set; }
+        public DbSet<Transactions> transactions { get; set; }
         public DbSet<SubTransactions> subtransactions { get; set; }
 
 
