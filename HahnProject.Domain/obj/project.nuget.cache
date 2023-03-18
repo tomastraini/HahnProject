@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "UXXmKj/aJRAVkIMAFg2wSTygE3UO51OBRrQGGcVIIejeMu1Tn4Shv3hGvNaxJfS63QF5FqxrGLMWw0V9zWTcXQ==",
+  "dgSpecHash": "Atlds/GDXAAuboREBUjAr9aiqN+it1+mxFiZJZ1oMFyQ9IGnMEXSCeLiDr0Obk0hOUZ7ME+fG6bJQvMCGuG15g==",
   "success": true,
   "projectFilePath": "D:\\Proyectos desarrollo\\Proyectos nuevos\\HahnProject\\HahnProject.Domain\\HahnProject.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TomasPC\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\TomasPC\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\TomasPC\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\TomasPC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\TomasPC\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

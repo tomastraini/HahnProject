@@ -25,7 +25,7 @@ namespace HahnProject.API.Controllers
         [HttpPost]
         public ActionResult InsertTransaction(TransactionR p)
         {
-            transactions.Insert(new Domain.AggregatesModel.PersonAggregate.Transactions()
+            transactions.Insert(new Domain.AggregatesModel.TransactionAggregate.Transactions()
             {
                 ID = p.ID,
                 person = p.person,

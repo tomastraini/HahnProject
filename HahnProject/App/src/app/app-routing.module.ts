@@ -1,11 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PersonComponent } from './person/person.component';
+import { MainComponent } from './main/main.component';
+import { PersonComponent } from './main/person/person.component';
+import { PersontypeComponent } from './main/persontype/persontype.component';
+import { ProductsComponent } from './main/products/products.component';
+import { TransactionsComponent } from './main/transactions/transactions.component';
+import { MainmenuComponent } from './mainmenu/mainmenu.component';
 
 const routes: Routes = [
   {
-    path: 'person',
-    component: PersonComponent,
+    path: '',
+    component: MainComponent,
+    children:
+    [
+      {
+        path: 'people',
+        component: PersonComponent,
+      },
+      {
+        path: 'persontype',
+        component: PersontypeComponent,
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+      },
+      {
+        path: 'transactions',
+        component: TransactionsComponent,
+      },
+      {
+        path: '',
+        component: MainmenuComponent,
+      },
+    ]
   }
 ];
 
@@ -15,4 +43,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingcomponents = [PersonComponent];
+export const routingcomponents = [MainComponent];

@@ -1,12 +1,12 @@
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.deps.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.runtimeconfig.json
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.pdb
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.csproj.AssemblyReference.cache
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.AssemblyInfoInputs.cache
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.AssemblyInfo.cs
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.csproj.CoreCompileInputs.cache
-D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.deps.json
-D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.runtimeconfig.json
-D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.dll
-D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\bin\Debug\net6.0\HahnProject.Infrastructure.pdb
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.dll
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\refint\HahnProject.Infrastructure.dll
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject.Infrastructure\obj\Debug\net6.0\HahnProject.Infrastructure.pdb

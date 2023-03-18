@@ -24,7 +24,7 @@ namespace HahnProject.API.Controllers
         [HttpPost]
         public ActionResult InsertProduct(ProductsR p)
         {
-            products.Insert(new Domain.AggregatesModel.PersonAggregate.Products()
+            products.Insert(new Domain.AggregatesModel.ProductsAggregate.Products()
             {
                 ID = p.id,
                 description = p.description,
@@ -41,7 +41,7 @@ namespace HahnProject.API.Controllers
         [HttpPut]
         public ActionResult ModifyProduct(ProductsR p)
         {
-            products.Update(new Domain.AggregatesModel.PersonAggregate.Products()
+            products.Update(new Domain.AggregatesModel.ProductsAggregate.Products()
             {
                 ID = p.id,
                 description = p.description,
