@@ -1,5 +1,4 @@
 ﻿using BB.SmsQuiz.Infrastructure.Domain;
-using HahnProject.Domain.AggregatesModel.ClientAggregate;
 using HahnProject.Domain.AggregatesModel.PersonAggregate;
 using HahnProject.Domain.Domain;
 using System;

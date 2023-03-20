@@ -10,6 +10,7 @@ export class MainComponent implements OnInit {
 
   constructor(public router: Router) { }
   view = '';
+  searchvalue: any;
 
   ngOnInit(): void
   {

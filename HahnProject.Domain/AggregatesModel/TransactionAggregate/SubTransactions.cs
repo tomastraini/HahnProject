@@ -73,16 +73,13 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
                                 where p.id == st.product_id
                                 select p.price).FirstOrDefault();
 
-            ctx.subtransactions.Add(new Infrastructure.PlainModels.SubTransactions()
+            var r = ctx.subtransactions.Add(new Infrastructure.PlainModels.SubTransactions()
             {
-                id = st.ID,
                 amount = st.amount,
                 product_id = st.product_id,
                 total = st.amount * productPrice,
                 transaction_id = st.transaction_id
             });
-
-            ctx.SaveChanges();
         }
 
         public void Update(SubTransactions st)

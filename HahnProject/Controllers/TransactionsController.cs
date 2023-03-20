@@ -1,5 +1,6 @@
 ﻿using HahnProject.API.RequestEntities;
 using HahnProject.Domain.AggregatesModel.TransactionAggregate;
+using HahnProject.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,11 @@ namespace HahnProject.API.Controllers
     [ApiController]
     public class TransactionsController : ControllerBase
     {
-        public Transactions transactions = new Transactions();
+        public ITransactionsService transactions;
+        public TransactionsController(ITransactionsService transactions)
+        {
+            this.transactions = transactions;
+        }
         [HttpGet]
         public ActionResult GetTransactions()
         {
@@ -25,12 +30,13 @@ namespace HahnProject.API.Controllers
         [HttpPost]
         public ActionResult InsertTransaction(TransactionR p)
         {
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+            }
             transactions.Insert(new Domain.AggregatesModel.TransactionAggregate.Transactions()
             {
-                ID = p.ID,
-                person = p.person,
-                total = p.total,
-                transaction_began = p.transaction_began
+                person = p.person
             });
             return Ok();
         }
@@ -38,6 +44,10 @@ namespace HahnProject.API.Controllers
         [HttpPut]
         public ActionResult ModifyTransaction(TransactionR p)
         {
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+            }
             transactions.Update(new Transactions()
             {
                 ID = p.ID,

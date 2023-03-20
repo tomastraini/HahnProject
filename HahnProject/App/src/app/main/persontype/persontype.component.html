@@ -1,1 +1,84 @@
-<p>persontype works!</p>
+<div *ngIf="persontypes === undefined" class="loadingScreen">
+    <div class="spinner-border text-primary" role="status">
+    </div>
+    <h3 class="text-white ">
+      Loading...
+    </h3>
+  </div>
+
+
+  <div *ngIf="!(persontypes === undefined)">
+    <div class="mb-2">
+      <button class="btn btn-primary" 
+      data-bs-toggle="modal"  data-bs-target="#modal" (click)="OnOpenModal('add', null);">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add
+      </button>
+    </div>
+    <table class="table table-light table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="table-light">#</th>
+            <th scope="col" class="table-light">Person type</th>
+            <th scope="col" class="table-light text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let persontype of persontypes | persontypeFilter: searchvalue">
+          <tr>
+            <th scope="row">{{ persontype.id }}</th>
+            <td> {{ persontype.type }} </td>
+            <td class="text-center">
+                <button class="btn btn-warning" 
+                data-bs-toggle="modal" data-bs-target="#modal"
+                (click)="OnOpenModal('edit', persontype);">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    Edit
+                </button>
+    
+                <button class="btn btn-danger" style="margin-left: 50px;"
+                data-bs-toggle="modal" data-bs-target="#modal"
+                (click)="OnOpenModal('delete', persontype);">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Delete
+                </button>
+            </td>
+    
+          </tr>
+        </tbody>
+    </table>
+    
+    
+    
+    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title mb-5" id="exampleModalLabel">
+              {{ modalTitle }}
+            </h3>
+            <div class="alert alert-danger mt-5" role="alert" *ngIf="errorMesage !== ''">
+              {{ errorMesage }}
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="OnAcceptModal()">
+                <div class="mb-3" *ngIf="!(action == 'delete')">
+                  <label class="form-label">
+                    Type
+                  </label>
+                  <input type="text" class="form-control" name="type" [(ngModel)]="type">
+                </div>
+              <button type="submit" class="btn {{ modalbtnClass }}">
+                Ok
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

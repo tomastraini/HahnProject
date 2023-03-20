@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PersonType = HahnProject.Domain.AggregatesModel.PersonAggregate.PersonType;
 
-namespace HahnProject.Domain.AggregatesModel.ClientAggregate
+namespace HahnProject.Domain.AggregatesModel.PersonAggregate
 {
     public class Person : EntityBase, IAggregateRoot, BaseRepositoryMethods<Person>
     {
@@ -92,6 +92,44 @@ namespace HahnProject.Domain.AggregatesModel.ClientAggregate
                         type = x.persontype.type
                     }
                     
+                });
+            });
+            return response;
+        }
+
+        public List<Person> FindAllByType(long id)
+        {
+            var dbresult = (from p in ctx.person
+                            join pt in ctx.persontype on p.person_type equals pt.id
+                            select new Person()
+                            {
+                                ID = p.id,
+                                business_name = p.business_name,
+                                balance = p.balance,
+                                creation_date = p.creation_date,
+                                persontype = new PersonType()
+                                {
+                                    ID = pt.id,
+                                    type = pt.type
+                                },
+                            }
+                       ).ToList();
+
+            var response = new List<Person>();
+            dbresult.ForEach(x =>
+            {
+                response.Add(new Person()
+                {
+                    ID = x.ID,
+                    business_name = x.business_name,
+                    balance = x.balance,
+                    creation_date = x.creation_date,
+                    persontype = new PersonType()
+                    {
+                        ID = x.persontype.ID,
+                        type = x.persontype.type
+                    }
+
                 });
             });
             return response;

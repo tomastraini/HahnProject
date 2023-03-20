@@ -11,6 +11,7 @@
           "FluentValidation.AspNetCore": "11.2.2",
           "HahnProject.Domain": "1.0.0",
           "HahnProject.Infrastructure": "1.0.0",
+          "HahnProject.Service": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Negotiate": "6.0.13",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
@@ -986,6 +987,21 @@
         "runtime": {
           "HahnProject.Infrastructure.dll": {}
         }
+      },
+      "HahnProject.Service/1.0.0": {
+        "dependencies": {
+          "FluentValidation.AspNetCore": "11.2.2",
+          "HahnProject.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "7.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0",
+          "Microsoft.Extensions.Configuration.UserSecrets": "7.0.0"
+        },
+        "runtime": {
+          "HahnProject.Service.dll": {}
+        }
       }
     }
   },
@@ -1638,6 +1654,11 @@
       "sha512": ""
     },
     "HahnProject.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HahnProject.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

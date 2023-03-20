@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HahnProject.Domain\HahnProject.Domain.csproj" />
     <ProjectReference Include="..\HahnProject.Infrastructure\HahnProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\HahnProject.Service\HahnProject.Service.csproj" />
   </ItemGroup>
 
 </Project>

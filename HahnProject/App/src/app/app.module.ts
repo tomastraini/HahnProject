@@ -23,7 +23,12 @@ import { ProductsComponent } from './main/products/products.component';
 import { PersontypeComponent } from './main/persontype/persontype.component';
 import { TransactionsComponent } from './main/transactions/transactions.component';
 import { PersonComponent } from './main/person/person.component';
-import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { MainmenuComponent } from './main/mainmenu/mainmenu.component';
+import { PeopleFilterPipe } from './Pipes/PeopleFilterPipe';
+import { PersonTypeFilterPipe } from './Pipes/PersonTypeFilterPipe';
+import { ProductsFilterPipe } from './Pipes/ProductsFilterPipe';
+import { TransactionsFilterPipe } from './Pipes/TransactionsFilterPipe';
+import { SubtransactionsComponent } from './main/subtransactions/subtransactions.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,11 @@ import { MainmenuComponent } from './mainmenu/mainmenu.component';
     PersontypeComponent,
     TransactionsComponent,
     MainmenuComponent,
+    PeopleFilterPipe,
+    PersonTypeFilterPipe,
+    ProductsFilterPipe,
+    TransactionsFilterPipe,
+    SubtransactionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 ﻿using HahnProject.API.RequestEntities;
 using Microsoft.AspNetCore.Mvc;
 using HahnProject.Domain.AggregatesModel.PersonAggregate;
+using HahnProject.Service;
 
 namespace HahnProject.API.Controllers
 {
@@ -8,7 +9,11 @@ namespace HahnProject.API.Controllers
     [ApiController]
     public class PersonTypeController : ControllerBase
     {
-        public PersonType persontype = new PersonType();
+        public IPersonTypeService persontype;
+        public PersonTypeController(IPersonTypeService persontype)
+        {
+            this.persontype = persontype;
+        }
         [HttpGet]
         public ActionResult GetPersontypes()
         {
@@ -24,6 +29,10 @@ namespace HahnProject.API.Controllers
         [HttpPost]
         public ActionResult InsertPersontype(PersonTypeR p)
         {
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+            }
             persontype.Insert(new Domain.AggregatesModel.PersonAggregate.PersonType()
             {
                 type = p.type,
@@ -34,6 +43,10 @@ namespace HahnProject.API.Controllers
         [HttpPut]
         public ActionResult ModifyPersontype(PersonTypeR p)
         {
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+            }
             persontype.Update(new PersonType()
             {
                 ID = p.ID,

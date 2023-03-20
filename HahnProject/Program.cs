@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Server.HttpSys;
 using FluentValidation.AspNetCore;
 using System.Reflection;
+using HahnProject.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,13 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<IPersonTypeService, PersonTypeService>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<ISubTransactionsService, SubTransactionsService>();
+builder.Services.AddScoped<ITransactionsService, TransactionsService>();
+
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {

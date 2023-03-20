@@ -114,3 +114,5 @@ D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\obj\Debug\net6.
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\obj\Debug\net6.0\HahnProject.API.pdb
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\obj\Debug\net6.0\HahnProject.API.genruntimeconfig.cache
 D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\obj\Debug\net6.0\ref\HahnProject.API.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Service.dll
+D:\Proyectos desarrollo\Proyectos nuevos\HahnProject\HahnProject\bin\Debug\net6.0\HahnProject.Service.pdb

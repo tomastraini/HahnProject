@@ -1,6 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Hahn warehouse</a>
+      <a class="navbar-brand" href="/">
+        Hahn warehouse
+        <img src="../../assets/Icon/icon.jpg" height="50" width="50" style="border-radius: 50%;">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,7 +25,9 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control me-2" type="search"
+          placeholder="Search" aria-label="Search"
+          [(ngModel)]="searchvalue" mdbInput name="searchvalue">
           <button class="btn btn-outline-danger" type="submit">Search</button>
         </form>
       </div>
@@ -31,8 +36,8 @@
 
 <div class="mt-5" style="margin-left: 15px; margin-right: 15px;">
     <app-mainmenu *ngIf="this.view == ''"></app-mainmenu>
-    <app-person *ngIf="this.view == 'people'"></app-person>
-    <app-persontype *ngIf="this.view == 'persontype'"></app-persontype>
-    <app-products *ngIf="this.view == 'products'"></app-products>
-    <app-transactions *ngIf="this.view == 'transactions'"></app-transactions>
+    <app-person *ngIf="this.view == 'people'" [searchvalue]="searchvalue"></app-person>
+    <app-persontype *ngIf="this.view == 'persontype'" [searchvalue]="searchvalue"></app-persontype>
+    <app-products *ngIf="this.view == 'products'" [searchvalue]="searchvalue"></app-products>
+    <app-transactions *ngIf="this.view == 'transactions'" [searchvalue]="searchvalue"></app-transactions>
 </div>

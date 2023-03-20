@@ -53,7 +53,7 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
                                            description = pr.description,
                                            price = pr.price,
                                            stock = pr.stock,
-                                           supplier = new ClientAggregate.Person()
+                                           supplier = new PersonAggregate.Person()
                                            {
                                                business_name = per.business_name
                                            }
@@ -127,7 +127,7 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
                                            description = pr.description,
                                            price = pr.price,
                                            stock = pr.stock,
-                                           supplier = new ClientAggregate.Person()
+                                           supplier = new PersonAggregate.Person()
                                            {
                                                business_name = per.business_name
                                            }
@@ -160,10 +160,9 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
         {
             ctx.transactions.Add(new Infrastructure.PlainModels.Transactions()
             {
-                id = t.ID,
                 person = t.person,
                 total = t.total,
-                transaction_began = t.transaction_began
+                transaction_began = DateTime.Now
             });
 
             ctx.SaveChanges();

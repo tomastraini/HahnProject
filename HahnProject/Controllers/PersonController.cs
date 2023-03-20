@@ -1,6 +1,7 @@
 ﻿using HahnProject.API.RequestEntities;
-using HahnProject.Domain.AggregatesModel.ClientAggregate;
+using HahnProject.Domain.AggregatesModel.PersonAggregate;
 using HahnProject.Infrastructure;
+using HahnProject.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,23 +11,38 @@ namespace HahnProject.API.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        public Person person = new Person();
+        public IPersonService srv;
+        public PersonController(IPersonService srv)
+        {
+            this.srv = srv;
+        }
         [HttpGet]
         public ActionResult GetPerson()
         {
-            return Ok(person.FindAll());
+            return Ok(srv.FindAll());
         }
+
+        [HttpGet("ByType")]
+        public ActionResult GetPersonByType(long id)
+        {
+            return Ok(srv.FindAllByType(id));
+        }
+
 
         [HttpGet("{id}")]
         public ActionResult GetPeople(long id)
         {
-            return Ok(person.FindById(id));
+            return Ok(srv.FindById(id));
         }
 
         [HttpPost]
         public ActionResult InsertPerson(PersonR p)
         {
-            person.Insert(new Person()
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+            }
+            srv.Insert(new Person()
             { 
                 business_name = p.business_name,
                 balance = p.balance,
@@ -41,7 +57,12 @@ namespace HahnProject.API.Controllers
         [HttpPut]
         public ActionResult ModifyPerson(PersonR p)
         {
-            person.Update(new Person()
+            if (!ModelState.IsValid)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, ModelState);
+            }
+
+            srv.Update(new Person()
             {
                 ID = p.ID,
                 business_name = p.business_name,
@@ -57,7 +78,7 @@ namespace HahnProject.API.Controllers
         [HttpDelete]
         public ActionResult ModifyPerson(long id)
         {
-            person.Delete(id);
+            srv.Delete(id);
             return Ok();
         }
     }

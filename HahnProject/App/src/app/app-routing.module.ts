@@ -5,7 +5,8 @@ import { PersonComponent } from './main/person/person.component';
 import { PersontypeComponent } from './main/persontype/persontype.component';
 import { ProductsComponent } from './main/products/products.component';
 import { TransactionsComponent } from './main/transactions/transactions.component';
-import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { MainmenuComponent } from './main/mainmenu/mainmenu.component';
+import { SubtransactionsComponent } from './main/subtransactions/subtransactions.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
         path: '',
         component: MainmenuComponent,
       },
+      {
+        path: 'subtransactions',
+        component: SubtransactionsComponent
+      }
     ]
   }
 ];

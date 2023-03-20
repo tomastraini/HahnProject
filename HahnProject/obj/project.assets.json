@@ -1600,6 +1600,26 @@
         "runtime": {
           "bin/placeholder/HahnProject.Infrastructure.dll": {}
         }
+      },
+      "HahnProject.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation.AspNetCore": "11.2.2",
+          "HahnProject.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.3",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "7.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "7.0.0",
+          "Microsoft.Extensions.Configuration.Json": "7.0.0",
+          "Microsoft.Extensions.Configuration.UserSecrets": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HahnProject.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HahnProject.Service.dll": {}
+        }
       }
     }
   },
@@ -4556,6 +4576,11 @@
       "type": "project",
       "path": "../HahnProject.Infrastructure/HahnProject.Infrastructure.csproj",
       "msbuildProject": "../HahnProject.Infrastructure/HahnProject.Infrastructure.csproj"
+    },
+    "HahnProject.Service/1.0.0": {
+      "type": "project",
+      "path": "../HahnProject.Service/HahnProject.Service.csproj",
+      "msbuildProject": "../HahnProject.Service/HahnProject.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4563,6 +4588,7 @@
       "FluentValidation.AspNetCore >= 11.2.2",
       "HahnProject.Domain >= 1.0.0",
       "HahnProject.Infrastructure >= 1.0.0",
+      "HahnProject.Service >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Negotiate >= 6.0.13",
       "Microsoft.EntityFrameworkCore >= 7.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.3",
@@ -4607,6 +4633,9 @@
             },
             "D:\\Proyectos desarrollo\\Proyectos nuevos\\HahnProject\\HahnProject.Infrastructure\\HahnProject.Infrastructure.csproj": {
               "projectPath": "D:\\Proyectos desarrollo\\Proyectos nuevos\\HahnProject\\HahnProject.Infrastructure\\HahnProject.Infrastructure.csproj"
+            },
+            "D:\\Proyectos desarrollo\\Proyectos nuevos\\HahnProject\\HahnProject.Service\\HahnProject.Service.csproj": {
+              "projectPath": "D:\\Proyectos desarrollo\\Proyectos nuevos\\HahnProject\\HahnProject.Service\\HahnProject.Service.csproj"
             }
           }
         }
