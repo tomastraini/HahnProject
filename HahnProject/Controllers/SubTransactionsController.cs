@@ -28,7 +28,7 @@ namespace HahnProject.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetSubTransactions(SubTransactionR p)
+        public ActionResult PostSubTransactions(SubTransactionR p)
         {
             if (!ModelState.IsValid)
             {
@@ -36,7 +36,9 @@ namespace HahnProject.API.Controllers
             }
             SubTransactions.Insert(new Domain.AggregatesModel.TransactionAggregate.SubTransactions()
             {
-                ID = p.ID,
+                product_id = p.product_id,
+                transaction_id = p.transaction_id,
+                amount = p.amount
             });
             return Ok();
         }

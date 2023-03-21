@@ -80,6 +80,7 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
                 total = st.amount * productPrice,
                 transaction_id = st.transaction_id
             });
+            ctx.SaveChanges();
         }
 
         public void Update(SubTransactions st)

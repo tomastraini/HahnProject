@@ -45,7 +45,7 @@ export class TransactionsComponent implements OnInit {
       this.transactions = res;
     });
 
-    this.http.get<any[]>(route + '/Person/ByType?id=1').subscribe(res =>
+    this.http.get<any[]>(route + '/Person').subscribe(res =>
       {
         this.person = res;      
 
@@ -113,6 +113,13 @@ export class TransactionsComponent implements OnInit {
           }
       });
     }
+  }
+
+  OnOpenTransaction(id: any): void
+  {
+    sessionStorage.setItem("transaction", this.transactions.find(x => x.id == id).id)
+    window.open("/subtransactions");
+    
   }
 
 }

@@ -39,6 +39,7 @@ namespace HahnProject.Infrastructure
             modelBuilder.ApplyConfiguration(new TransactionsConfiguration());
             modelBuilder.ApplyConfiguration(new SubTransactionsConfiguration());
 
+
             modelBuilder.Entity<Person>()
                 .HasOne(x => x.PersonType)
                 .WithMany(x => x.people)
@@ -53,6 +54,11 @@ namespace HahnProject.Infrastructure
                 .HasOne(x => x.Transactions)
                 .WithMany(x => x.SubTransactions)
                 .HasForeignKey(x => x.transaction_id);
+
+            modelBuilder.Entity<SubTransactions>(entry =>
+            {
+                entry.ToTable("sub_transactions", tb => tb.HasTrigger("updatetotal"));
+            });
 
             OnModelCreatingPartial(modelBuilder);
 

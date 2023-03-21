@@ -40,4 +40,5 @@
     <app-persontype *ngIf="this.view == 'persontype'" [searchvalue]="searchvalue"></app-persontype>
     <app-products *ngIf="this.view == 'products'" [searchvalue]="searchvalue"></app-products>
     <app-transactions *ngIf="this.view == 'transactions'" [searchvalue]="searchvalue"></app-transactions>
+    <app-subtransactions *ngIf="this.view.includes('subtransactions')" [searchvalue]="searchvalue"></app-subtransactions>
 </div>

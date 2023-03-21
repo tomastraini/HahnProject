@@ -22,6 +22,7 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
         {
             var transactions = (from t in ctx.transactions
                                 join p in ctx.person on t.person equals p.id
+                                join pt in ctx.persontype on p.person_type equals pt.id
                                 select new Transactions()
                                 {
                                     ID = t.id,
@@ -34,6 +35,11 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
                                         balance = p.balance,
                                         business_name = p.business_name,
                                         creation_date = p.creation_date,
+                                        PersonType = new PersonType()
+                                        {
+                                            id = pt.id,
+                                            type = pt.type
+                                        }
                                     },
                                     SubTransactions = new List<SubTransactions>()
                                 }).ToList();
@@ -92,6 +98,7 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
         {
             var transactions = (from t in ctx.transactions
                                 join p in ctx.person on t.person equals p.id
+                                join pt in ctx.persontype on p.person_type equals pt.id
                                 where t.id == id
                                 select new Transactions()
                                 {
@@ -105,6 +112,11 @@ namespace HahnProject.Domain.AggregatesModel.TransactionAggregate
                                         balance = p.balance,
                                         business_name = p.business_name,
                                         creation_date = p.creation_date,
+                                        PersonType = new PersonType()
+                                        {
+                                            id = pt.id,
+                                            type = pt.type
+                                        }
                                     },
                                     SubTransactions = new List<SubTransactions>()
                                 }).FirstOrDefault();

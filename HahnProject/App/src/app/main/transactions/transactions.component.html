@@ -1,11 +1,11 @@
-<div *ngIf="transactions === undefined  || person === undefined" class="loadingScreen">
+<div *ngIf="transactions.length === 0" class="loadingScreen">
     <div class="spinner-border text-primary" role="status"></div>
     <h3 class="text-white ">
         Loading...
     </h3>
 </div>
 
-<div *ngIf="!(transactions === undefined || person === undefined)">
+<div *ngIf="!(transactions.length === 0 || person.length === 0)">
     <div class="mb-2">
       <button class="btn btn-primary" 
       data-bs-toggle="modal"  data-bs-target="#modal" (click)="OnOpenModal('add', null);">
@@ -20,6 +20,7 @@
             <th scope="col" class="table-light">Person</th>
             <th scope="col" class="table-light">Transaction beginning</th>
             <th scope="col" class="table-light">Total</th>
+            <th scope="col" class="table-light">Person type</th>
             <th scope="col" class="table-light">Substransactions</th>
             <th scope="col" class="table-light text-center">Action</th>
           </tr>
@@ -30,8 +31,9 @@
             <td> {{ transaction.persondata.business_name }} </td>
             <td> {{ transaction.transaction_began_t }} </td>
             <td> {{ transaction.total }} </td>
+            <td> {{ transaction.persondata.personType.type }} </td>
             <td>
-                <i class="fa fa-eye" style="cursor: pointer ;">
+                <i class="fa fa-eye" style="cursor: pointer ;"(click)="OnOpenTransaction(transaction.id);">
                 </i> 
             </td>
             <td class="text-center">

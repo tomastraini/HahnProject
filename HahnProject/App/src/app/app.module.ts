@@ -5,17 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatSelectModule} from '@angular/material/select';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatToolbarModule} from '@angular/material/toolbar'; 
-import {MatIconModule} from '@angular/material/icon'; 
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatMenuModule} from '@angular/material/menu';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 import { MainComponent } from './main/main.component';
@@ -29,6 +26,7 @@ import { PersonTypeFilterPipe } from './Pipes/PersonTypeFilterPipe';
 import { ProductsFilterPipe } from './Pipes/ProductsFilterPipe';
 import { TransactionsFilterPipe } from './Pipes/TransactionsFilterPipe';
 import { SubtransactionsComponent } from './main/subtransactions/subtransactions.component';
+import { SubTransactionsFilterPipe } from './Pipes/SubTransactionsFilterPipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +41,8 @@ import { SubtransactionsComponent } from './main/subtransactions/subtransactions
     PersonTypeFilterPipe,
     ProductsFilterPipe,
     TransactionsFilterPipe,
-    SubtransactionsComponent
+    SubtransactionsComponent,
+    SubTransactionsFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -54,13 +53,11 @@ import { SubtransactionsComponent } from './main/subtransactions/subtransactions
     HttpClientModule,
     MatSlideToggleModule,
     MatListModule,
-    MatToolbarModule,
-    MatSidenavModule,
     FormsModule,
-    MatGridListModule,
-    MatSelectModule,
-    MatProgressBarModule,
-    MatIconModule
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
