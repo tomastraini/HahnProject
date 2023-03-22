@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnProject.Domain", "HahnP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HahnProject.Service", "HahnProject.Service\HahnProject.Service.csproj", "{CBF9D16F-8AA5-47F3-9BFC-2AF4B9936FC5}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1FF2EBAB-64CE-49E0-A205-284DEECEC179}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CBF9D16F-8AA5-47F3-9BFC-2AF4B9936FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF9D16F-8AA5-47F3-9BFC-2AF4B9936FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBF9D16F-8AA5-47F3-9BFC-2AF4B9936FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF2EBAB-64CE-49E0-A205-284DEECEC179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF2EBAB-64CE-49E0-A205-284DEECEC179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF2EBAB-64CE-49E0-A205-284DEECEC179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF2EBAB-64CE-49E0-A205-284DEECEC179}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
