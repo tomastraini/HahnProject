@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'App';
-  apiUrl = "https://localhost:53218/api"
+  apiUrl = "https://localhost:50351/api"
 }

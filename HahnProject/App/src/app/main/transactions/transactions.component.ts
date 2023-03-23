@@ -10,8 +10,8 @@ import { AppComponent } from 'src/app/app.component';
 export class TransactionsComponent implements OnInit {
 
   constructor(private http: HttpClient, private appComponent: AppComponent) { }
-  transactions: any[] = [];
-  person: any[] = [];
+  transactions: any;
+  person: any;
   
   id: any;
   transaction_began: any;
@@ -117,7 +117,7 @@ export class TransactionsComponent implements OnInit {
 
   OnOpenTransaction(id: any): void
   {
-    sessionStorage.setItem("transaction", this.transactions.find(x => x.id == id).id)
+    sessionStorage.setItem("transaction", this.transactions.find((x: any) => x.id == id).id)
     window.open("/subtransactions");
     
   }

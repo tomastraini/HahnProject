@@ -1,11 +1,11 @@
-<div *ngIf="transactions.length === 0" class="loadingScreen">
+<div *ngIf="transactions === undefined" class="loadingScreen">
     <div class="spinner-border text-primary" role="status"></div>
     <h3 class="text-white ">
         Loading...
     </h3>
 </div>
 
-<div *ngIf="!(transactions.length === 0 || person.length === 0)">
+<div *ngIf="!(transactions === undefined || person === undefined)">
     <div class="mb-2">
       <button class="btn btn-primary" 
       data-bs-toggle="modal"  data-bs-target="#modal" (click)="OnOpenModal('add', null);">

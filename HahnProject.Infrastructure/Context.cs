@@ -60,6 +60,11 @@ namespace HahnProject.Infrastructure
                 entry.ToTable("sub_transactions", tb => tb.HasTrigger("updatetotal"));
             });
 
+            modelBuilder.Entity<Transactions>(entry =>
+            {
+                entry.ToTable("transactions", tb => tb.HasTrigger("deletesubtransactions"));
+            });
+
             OnModelCreatingPartial(modelBuilder);
 
         }

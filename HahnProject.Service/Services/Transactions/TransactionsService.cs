@@ -25,15 +25,6 @@ namespace HahnProject.Service
         }
         public void Delete(long id)
         {
-            var subtransactionsRelated = (from st in t.ctx.subtransactions
-                                          where st.transaction_id == id
-                                          select st).ToList();
-
-            subtransactionsRelated.ForEach(x =>
-            {
-                subt.Delete(x.id);
-            });
-            
             t.Delete(id);
         }
     }
