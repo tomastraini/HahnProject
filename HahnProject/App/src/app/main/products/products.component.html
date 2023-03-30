@@ -1,0 +1,155 @@
+<div *ngIf="products === undefined || suppliers === undefined" class="loadingScreen">
+    <div class="spinner-border text-primary" role="status"></div>
+    <h3 class="text-white ">
+        Loading...
+    </h3>
+</div>
+
+<div *ngIf="!(products === undefined || suppliers === undefined)">
+    <div class="mb-2">
+      <button class="btn btn-primary" 
+      data-bs-toggle="modal"  data-bs-target="#modal" (click)="OnOpenModal('add', null);">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add
+      </button>
+    </div>
+    <table class="table table-light table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="table-light">#</th>
+            <th scope="col" class="table-light">Description</th>
+            <th scope="col" class="table-light">Price</th>
+            <th scope="col" class="table-light">Stock</th>
+            <th scope="col" class="table-light">Supplier name</th>
+            <th scope="col" class="table-light">Supplier Info</th>
+            <th scope="col" class="table-light text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of products | productsFilter: searchvalue">
+          <tr>
+            <th scope="row">{{ product.id }}</th>
+            <td> {{ product.description }} </td>
+            <td> {{ product.price }} </td>
+            <td> {{ product.stock }} </td>
+            <td> {{ product.supplier.business_name }} </td>
+            <td>
+                <i class="fa fa-eye" style="cursor: pointer ;"
+                data-bs-toggle="modal" data-bs-target="#supplierModal" (click)="OnOpenModal('suppliers', product.supplier)">
+                </i> 
+            </td>
+
+            <td class="text-center">
+                <button class="btn btn-warning" 
+                data-bs-toggle="modal" data-bs-target="#modal"
+                (click)="OnOpenModal('edit', product);">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    Edit
+                </button>
+    
+                <button class="btn btn-danger" style="margin-left: 50px;"
+                data-bs-toggle="modal" data-bs-target="#modal"
+                (click)="OnOpenModal('delete', product);">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Delete
+                </button>
+            </td>
+    
+          </tr>
+        </tbody>
+    </table>
+    
+    
+    
+    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title mb-5" id="exampleModalLabel">
+              {{ modalTitle }}
+            </h4>
+            <div class="alert alert-danger mt-5" role="alert" *ngIf="errorMesage !== ''">
+              {{ errorMesage }}
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="OnAcceptModal()">
+                <div *ngIf="!(action == 'delete')">
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Description
+                        </label>
+                        <input type="text" class="form-control" name="description" [(ngModel)]="description">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Price
+                        </label>
+                        <input type="text" class="form-control" name="price" [(ngModel)]="price">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Stock
+                        </label>
+                        <input type="text" class="form-control" name="stock" [(ngModel)]="stock">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                          Supplier
+                        </label>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        name="type" [(ngModel)]="supplier_id">
+                          <option selected>Open this select menu</option>
+                          <option *ngFor="let s of suppliers" value="{{ s.id }}">{{ s.business_name }}</option>
+                        </select>
+                      </div>
+                </div>
+              <button type="submit" class="btn {{ modalbtnClass }}">
+                Ok
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="supplierModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Supplier information</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="mb-3">
+                  <label class="form-label">
+                      Business name
+                  </label>
+                  <input type="text" disabled class="form-control" value="{{ supplier?.business_name }}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">
+                      Balance
+                  </label>
+                  <input type="text" disabled class="form-control" value="{{ supplier?.balance }}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label">
+                      Entrance date
+                  </label>
+                  <input type="text" disabled class="form-control" value="{{ supplier?.creation_date }}">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+

@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  hahnproject.api:
+    image: ${DOCKER_REGISTRY-}hahnprojectapi
+    build:
+      context: .
+      dockerfile: HahnProject/Dockerfile
+  hahnproject.angular:
+    image: ${DOCKER_REGISTRY-}hahnprojectfrontend
+    build:
+      context: .
+      dockerfile: HahnProject/App/Dockerfile
+    ports:
+      - '4200:4200'
+    volumes:
+            - ./HahnProject/App/:/app/front-end

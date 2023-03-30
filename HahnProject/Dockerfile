@@ -13,19 +13,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends gss-ntlmssp
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["HahnProject/HahnProject.csproj", "HahnProject/"]
-RUN dotnet restore "HahnProject/HahnProject.csproj"
+COPY ["HahnProject/HahnProject.API.csproj", "HahnProject/"]
+RUN dotnet restore "HahnProject/HahnProject.API.csproj"
 
 COPY . .
 WORKDIR "/src/HahnProject"
-RUN dotnet build "HahnProject.csproj" -c Release -o /app/build
+RUN dotnet build "HahnProject.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "HahnProject.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
+RUN dotnet publish "HahnProject.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "HahnProject.dll"]
+
 

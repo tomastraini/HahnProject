@@ -1,0 +1,89 @@
+<div *ngIf="transactions === undefined" class="loadingScreen">
+    <div class="spinner-border text-primary" role="status"></div>
+    <h3 class="text-white ">
+        Loading...
+    </h3>
+</div>
+
+<div *ngIf="!(transactions === undefined || person === undefined)">
+    <div class="mb-2">
+      <button class="btn btn-primary" 
+      data-bs-toggle="modal"  data-bs-target="#modal" (click)="OnOpenModal('add', null);">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add
+      </button>
+    </div>
+    <table class="table table-light table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="table-light">#</th>
+            <th scope="col" class="table-light">Person</th>
+            <th scope="col" class="table-light">Transaction beginning</th>
+            <th scope="col" class="table-light">Total</th>
+            <th scope="col" class="table-light">Person type</th>
+            <th scope="col" class="table-light">Substransactions</th>
+            <th scope="col" class="table-light text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let transaction of transactions | transactionsFilter: searchvalue">
+          <tr>
+            <th scope="row">{{ transaction.id }}</th>
+            <td> {{ transaction.persondata.business_name }} </td>
+            <td> {{ transaction.transaction_began_t }} </td>
+            <td> {{ transaction.total }} </td>
+            <td> {{ transaction.persondata.personType.type }} </td>
+            <td>
+                <i class="fa fa-eye" style="cursor: pointer ;"(click)="OnOpenTransaction(transaction.id);">
+                </i> 
+            </td>
+            <td class="text-center">
+                <button class="btn btn-danger" style="margin-left: 50px;"
+                data-bs-toggle="modal" data-bs-target="#modal"
+                (click)="OnOpenModal('delete', transaction);">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Delete
+                </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title mb-5" id="exampleModalLabel">
+            {{ modalTitle }}
+          </h3>
+          <div class="alert alert-danger mt-5" role="alert" *ngIf="errorMesage !== ''">
+            {{ errorMesage }}
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="OnAcceptModal()">
+            <div class="mb-3" *ngIf="!(action == 'delete')">
+                <div class="mb-3">
+                    <label class="form-label">
+                      Business name
+                    </label>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                    name="business_name" [(ngModel)]="business_name">
+                      <option selected>Open this select menu</option>
+                      <option *ngFor="let p of person" value="{{ p.id }}">{{ p.business_name }}</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn {{ modalbtnClass }}">
+              Ok
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

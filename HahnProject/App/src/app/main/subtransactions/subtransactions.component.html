@@ -1,0 +1,115 @@
+<div *ngIf="subtransactions === undefined" class="loadingScreen">
+    <div class="spinner-border text-primary" role="status"></div>
+    <h3 class="text-white ">
+        Loading...
+    </h3>
+</div>
+
+<div *ngIf="!(subtransactions === undefined )">
+    <div class="mb-2 inline">
+
+      <div class="row g-3 align-items-center">
+        <div class="col-auto">
+          <button class="btn btn-primary" 
+          data-bs-toggle="modal"  data-bs-target="#modal" (click)="OnOpenModal('add', null);">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Add
+          </button>
+        </div>
+        <div class="col-auto">
+          <h3 class="col-form-label text-white mt-3">
+            TOTAL:
+            {{ fathertransaction.total }}
+          </h3>
+        </div>
+      </div>
+
+    </div>
+    <table class="table table-light table-bordered">
+        <thead>
+          <tr>
+            <th scope="col" class="table-light">#</th>
+            <th scope="col" class="table-light">Product</th>
+            <th scope="col" class="table-light">Amount</th>
+            <th scope="col" class="table-light">Total</th>
+            <th scope="col" class="table-light text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let transaction of subtransactions | subtransactionsFilter: searchvalue">
+          <tr>
+            <th scope="row">{{ transaction.id }}</th>
+            <td> {{ transaction.products.description }} </td>
+            <td> {{ transaction.amount }} </td>
+            <td> {{ transaction.total }} </td>
+            <td class="text-center">
+                <button class="btn btn-danger" style="margin-left: 50px;"
+                data-bs-toggle="modal" data-bs-target="#modal"
+                (click)="OnOpenModal('delete', transaction);">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    Delete
+                </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title mb-5" id="exampleModalLabel">
+            {{ modalTitle }}
+          </h3>
+          <div class="alert alert-danger mt-5" role="alert" *ngIf="errorMesage !== ''">
+            {{ errorMesage }}
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="OnAcceptModal()">
+            <div class="mb-3" *ngIf="!(action == 'delete')">
+                <div class="mb-3">
+                  <label class="form-label">
+                    Search product
+                  </label>
+                  <mat-form-field class="example-full-width" appearance="fill" *ngIf="visibilitydropdown" class="form-control">
+                    <mat-label>Pick a product</mat-label>
+                    <input type="text"
+                            placeholder="Pick a product"
+                            matInput
+                            [formControl]="myControl"
+                            [matAutocomplete]="auto"
+                            [value]="productMessage">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="AutoCompleteDisplay">
+                      <mat-option (click)="OnProductSelected(option); getTotal()" *ngFor="let option of filteredOptions | async" [value]="option.id">
+                        {{option.description}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">
+                      Amount
+                  </label>
+                  <input type="number" class="form-control" name="amount" [(ngModel)]="amount" (ngModelChange)="getTotal()">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">
+                      Total
+                  </label>
+                  <input type="number" disabled class="form-control" name="total" [(ngModel)]="total">
+                </div>
+            </div>
+            <button type="submit" class="btn {{ modalbtnClass }}">
+              Ok
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

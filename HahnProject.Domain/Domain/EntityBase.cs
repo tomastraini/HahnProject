@@ -7,12 +7,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using HahnProject.Infrastructure;
 using System;
 
 namespace BB.SmsQuiz.Infrastructure.Domain
 {
     public abstract class EntityBase 
     {
-        
+        public readonly Context ctx = new Context();
     }
 }

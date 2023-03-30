@@ -6,9 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>27978bae-230b-44e6-bd2d-554686d1384d</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Negotiate" Version="6.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
@@ -16,6 +18,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
@@ -23,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HahnProject.Domain\HahnProject.Domain.csproj" />
     <ProjectReference Include="..\HahnProject.Infrastructure\HahnProject.Infrastructure.csproj" />
+    <ProjectReference Include="..\HahnProject.Service\HahnProject.Service.csproj" />
   </ItemGroup>
 
 </Project>

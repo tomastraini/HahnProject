@@ -8,18 +8,36 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.AspNetCore.Connections.Features;
 using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Server.HttpSys;
+using FluentValidation.AspNetCore;
+using System.Reflection;
+using HahnProject.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(options =>
+{
+    // Validate child properties and root collection elements
+    options.ImplicitlyValidateChildProperties = true;
+    options.ImplicitlyValidateRootCollectionElements = true;
+
+    // Automatic registration of validators in assembly
+    options.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+}); ;
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddScoped<IPersonTypeService, PersonTypeService>();
+builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<ISubTransactionsService, SubTransactionsService>();
+builder.Services.AddScoped<ITransactionsService, TransactionsService>();
+
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {

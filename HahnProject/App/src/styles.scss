@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+p{ color:white; }
+.cdk-overlay-container, .cdk-overlay-pane { z-index: 99999 !important; }
+
+.loadingScreen
+{
+    margin-left: 48.5%;
+}
+
+.fadeInNav {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+  
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+  
+    -webkit-animation-duration:0.3s;
+    -moz-animation-duration:0.3s;
+    animation-duration:0.3s;
+  }
+  
